@@ -1,0 +1,19 @@
+<div class="app-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- Aquí tu navbar lateral -->
+    <nav>
+      <ul>
+<li><a routerLink="/users">Usuarios</a></li>
+<li><a routerLink="/categories">Categorías</a></li>
+<li><a routerLink="/products">Productos</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <!-- Aquí entra lo que cambia según la ruta -->
+    <router-outlet></router-outlet>
+  </main>
+</div>

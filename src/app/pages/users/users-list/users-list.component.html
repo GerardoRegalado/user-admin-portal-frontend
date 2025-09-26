@@ -1,0 +1,27 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Usuarios</h4>
+    <!-- Aquí puedes abrir un modal para crear/editar -->
+    <!-- <button cButton color="primary">Nuevo usuario</button> -->
+  </div>
+
+  <div color="danger" *ngIf="error">{{ error }}</div>
+  <span *ngIf="loading"></span>
+
+  <table hover responsive *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Usuario</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of rows">
+        <td>{{ u.name }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
