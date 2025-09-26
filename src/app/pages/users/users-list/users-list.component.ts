@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../core/services/user.service';
 import { User } from '../../../models/user';
-import { UserCardComponent } from "../../../shared/components/Card/card.component";
+import { EntityCardComponent } from "../../../shared/components/Card/card.component";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../../../shared/components/Modal/modal.component';
@@ -10,7 +10,7 @@ import { ModalComponent } from '../../../shared/components/Modal/modal.component
 @Component({
 selector: 'app-users-list',
 templateUrl: './users-list.component.html',
-imports: [FormsModule, UserCardComponent,CommonModule, ModalComponent],
+imports: [FormsModule, EntityCardComponent,CommonModule, ModalComponent],
 standalone: true
 })
 export class UsersListComponent implements OnInit {

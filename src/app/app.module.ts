@@ -32,8 +32,9 @@ import {
   SidebarModule,
   FooterComponent
 } from '@coreui/angular';
-import { UserCardComponent } from './shared/components/Card/card.component';
+import { EntityCardComponent } from './shared/components/Card/card.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { ModalComponent } from './shared/components/Modal/modal.component';
 
 
 @NgModule({
@@ -42,7 +43,6 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
     LoginComponent,
      MainLayoutComponent,
     AuthLayoutComponent,
-    CategoriesListComponent,
     ProductsListComponent
   ],
   imports: [
@@ -69,7 +69,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
     SidebarModule,
     FooterComponent,
     FormsModule,
-    UserCardComponent
+
 ],
   providers: [{
       provide: HTTP_INTERCEPTORS,

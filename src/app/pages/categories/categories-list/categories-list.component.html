@@ -1,1 +1,33 @@
-<p>categories-list works!</p>
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Categorías ({{ categories.length }})</h4>
+    <button cButton color="primary" (click)="openModal('create')">+ Crear categoría</button>
+  </div>
+
+  <div *ngIf="error" class="text-danger mb-2">{{ error }}</div>
+  <div *ngIf="loading">Cargando...</div>
+
+<div class="row">
+  <div *ngIf="categories.length > 0; else null">
+    <app-entity-card
+      *ngFor="let cat of categories"
+      [entity]="cat"
+      [type]="'category'"
+      (onDelete)="handleDelete($event._id!)"
+      (onUpdate)="handleSave($event)"
+      (onViewDetails)="openModal('view', cat)"
+    ></app-entity-card>
+  </div>
+</div>
+
+</div>
+
+<app-modal
+  [visible]="modalVisible"
+  [mode]="modalMode"
+  [entity]="selectedCategory"
+  (onClose)="closeModal()"
+  (onConfirm)="handleDelete(selectedCategory?._id!)"
+  (onSave)="handleSave($event)"
+  [type]="'category'"
+></app-modal>
