@@ -1,0 +1,48 @@
+<div class="modal fade show d-block" tabindex="-1" *ngIf="visible" style="background-color: rgba(0,0,0,0.5)">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ title }}</h5>
+        <button type="button" class="btn-close" (click)="onClose.emit()"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Confirm delete mode -->
+        <ng-container *ngIf="mode === 'confirm'; else formTemplate">
+          <p>¿Estás seguro de que deseas eliminar este usuario?</p>
+        </ng-container>
+
+        <!-- Create / Edit form -->
+<!-- Create / Edit form -->
+<ng-template #formTemplate>
+  <form *ngIf="mode !== 'view'; else viewTemplate">
+    <input [(ngModel)]="model.name" name="name" placeholder="Nombre" class="form-control mb-2" />
+    <input [(ngModel)]="model.username" name="username" placeholder="Usuario" class="form-control mb-2" />
+    <input [(ngModel)]="model.email" name="email" placeholder="Email" class="form-control mb-2" />
+    <input *ngIf="mode === 'create'" [(ngModel)]="model.password" name="password" placeholder="Contraseña" type="password" class="form-control mb-2" />
+  </form>
+
+  <!-- Modo solo lectura -->
+  <ng-template #viewTemplate>
+    <div class="mb-2"><strong>Nombre:</strong> {{ model.name }}</div>
+    <div class="mb-2"><strong>Usuario:</strong> {{ model.username }}</div>
+    <div class="mb-2"><strong>Email:</strong> {{ model.email }}</div>
+  </ng-template>
+</ng-template>
+
+
+      </div>
+
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="onClose.emit()">Cerrar</button>
+  <button
+    *ngIf="mode !== 'view'"
+    [ngClass]="{ 'btn': true, 'btn-danger': danger, 'btn-primary': !danger }"
+    (click)="confirm()">
+    {{ mode === 'confirm' ? 'Eliminar' : 'Guardar' }}
+  </button>
+</div>
+    </div>
+  </div>
+</div>
