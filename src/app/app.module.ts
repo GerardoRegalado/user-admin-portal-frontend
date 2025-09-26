@@ -20,7 +20,17 @@ import {
   FormControlDirective,
   FormDirective,
   FormLabelDirective,
-  FormTextDirective
+  FormTextDirective,
+  SidebarComponent,
+  SidebarHeaderComponent,
+  SidebarBrandComponent,
+  NavComponent,
+  NavItemComponent,
+  ContainerComponent,
+  SidebarNavComponent,
+  SidebarNavHelper,
+  SidebarModule,
+  FooterComponent
 } from '@coreui/angular';
 
 
@@ -48,6 +58,15 @@ import {
     FormDirective,
     FormLabelDirective,
     FormTextDirective,
+    SidebarComponent,
+    SidebarHeaderComponent,
+    SidebarBrandComponent,
+    NavComponent,
+    NavItemComponent,
+    ContainerComponent,
+    SidebarNavComponent,
+    SidebarModule,
+    FooterComponent
 ],
   providers: [],
   bootstrap: [AppComponent]

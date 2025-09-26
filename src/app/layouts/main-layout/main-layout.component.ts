@@ -8,4 +8,22 @@ import { AppRoutingModule } from "../../app-routing.module";
   standalone: false,
 
 })
-export class MainLayoutComponent {}
+export class MainLayoutComponent {
+  navItems = [
+    {
+      name: 'Usuarios',
+      url: '/users',
+      iconComponent: { name: 'cil-user' },
+    },
+    {
+      name: 'Categorías',
+      url: '/categories',
+      iconComponent: { name: 'cil-list' },
+    },
+    {
+      name: 'Productos',
+      url: '/products',
+      iconComponent: { name: 'cil-library' },
+    },
+  ];
+}

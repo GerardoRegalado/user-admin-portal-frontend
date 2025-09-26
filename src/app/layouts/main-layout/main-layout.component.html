@@ -1,19 +1,21 @@
-<div class="app-layout">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <!-- Aquí tu navbar lateral -->
-    <nav>
-      <ul>
-<li><a routerLink="/users">Usuarios</a></li>
-<li><a routerLink="/categories">Categorías</a></li>
-<li><a routerLink="/products">Productos</a></li>
-      </ul>
-    </nav>
-  </aside>
+<!-- main-layout.component.html -->
 
-  <!-- Contenido principal -->
-  <main class="main-content">
-    <!-- Aquí entra lo que cambia según la ruta -->
+<c-sidebar  visible #sidebar1="cSidebar" class="border-end">
+  <c-sidebar-header class="border-bottom">
+    <c-sidebar-brand>Global Triangles Test</c-sidebar-brand>
+  </c-sidebar-header>
+
+  <c-sidebar-nav [navItems]="navItems" />
+
+  <c-footer>
+      <span>Developed by Gerardo Regalado</span>
+  </c-footer>
+</c-sidebar>
+
+<div class="wrapper d-flex flex-column min-vh-100 bg-light" style="margin-left: 250px">
+  <main class="main-content flex-grow-1 p-4">
     <router-outlet></router-outlet>
   </main>
 </div>
+
+
