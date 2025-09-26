@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000' // cambia a tu URL en Render al desplegar
+  apiUrl: 'https://user-admin-portal-backend.onrender.com' // cambia a tu URL en Render al desplegar
 };

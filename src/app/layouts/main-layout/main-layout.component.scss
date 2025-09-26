@@ -1,0 +1,48 @@
+.app-layout {
+  display: flex;
+  height: 100vh; // Ocupa toda la altura de la pantalla
+  overflow: hidden;
+
+  .sidebar {
+    width: 20%;
+    background-color: #1f2937; // Un gris oscuro tipo Tailwind (puedes cambiarlo)
+    color: white;
+    padding: 2rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 1rem;
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 600;
+          display: block;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          transition: background 0.3s;
+
+          &:hover {
+            background-color: #374151; // Hover gris más claro
+          }
+
+          &.active {
+            background-color: #2563eb; // Azul activo (puedes personalizar)
+          }
+        }
+      }
+    }
+  }
+
+  .main-content {
+    flex: 1; // Ocupa el resto del espacio
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: #f9fafb; // Fondo claro
+  }
+}

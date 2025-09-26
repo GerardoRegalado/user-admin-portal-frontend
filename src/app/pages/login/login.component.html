@@ -1,24 +1,26 @@
-<div class="min-vh-100 d-flex flex-row align-items-center">
+<div class="min-vh-100 d-flex flex-row align-items-center container">
   <div class="justify-content-center w-100">
-    <div lg="4">
-      <div>
-        <div>
-          <h4 class="mb-4">Iniciar sesión</h4>
+    <div>
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="login-container">
+          <img class="align-self-center" src="https://media.licdn.com/dms/image/v2/C4E0BAQGJOSh0xRWfBg/company-logo_200_200/company-logo_200_200/0/1659447923854/global_triangles_logo?e=1761782400&v=beta&t=YjeH7FfAVJ4Afpx11M-FTqXUm-XAKz17n98X-xNt0D4" alt="">
+          <h4 class="mb-4 p-lg-5">Login into your account</h4>
 
           <form (ngSubmit)="submit()" [formGroup]="form">
             <div class="mb-3">
               <label>Email</label>
               <input cFormControl type="email" class="form-control" formControlName="email">
             </div>
+
             <div class="mb-3">
-              <label>Contraseña</label>
+              <label>Password</label>
               <input cFormControl type="password" class="form-control" formControlName="password">
             </div>
 
             <div class="text-danger mb-2" *ngIf="error">{{ error }}</div>
 
-            <button cButton color="primary" class="w-100" [disabled]="loading">
-              {{ loading ? 'Entrando...' : 'Entrar' }}
+            <button type="submit" cButton color="dark" class="w-100" [disabled]="loading">
+              {{ loading ? 'logging...' : 'Log In' }}
             </button>
           </form>
         </div>

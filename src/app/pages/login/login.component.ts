@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrl: './login.component.scss',
   standalone: false
 })
 export class LoginComponent implements OnInit {
@@ -27,11 +28,12 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    console.log('hola')
     if (this.form.invalid) return;
     this.loading = true;
     this.error = '';
     this.auth.login(this.form.value).subscribe({
-      next: () => this.router.navigate(['/']),
+      next: () => this.router.navigate(['/users']),
       error: err => {
         this.error = err?.error?.message || 'Error al iniciar sesión';
         this.loading = false;

@@ -6,18 +6,20 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { ProductsListComponent } from './pages/products/products-list/products-list.component';
+import { AuthGuard } from './core/guards/auth.guard';
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: AuthLayoutComponent,
     children: [
-      { path: 'login', component: LoginComponent }
+      { path: '', component: LoginComponent }
     ]
   },
   // 👉 Layout para las rutas protegidas con navbar
   {
     path: '',
     component: MainLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'users', component: UsersListComponent },
       { path: 'categories', component: CategoriesListComponent },
