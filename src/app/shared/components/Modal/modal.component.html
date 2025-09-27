@@ -21,6 +21,13 @@
 <input *ngIf="type === 'user' && mode === 'create'" [(ngModel)]="model['password']" name="password" placeholder="Contraseña" type="password" class="form-control mb-2" />
 <input *ngIf="type === 'category'" [(ngModel)]="model['description']" name="description" placeholder="Descripción" class="form-control mb-2" />
 
+<!-- modal.component.html -->
+<textarea *ngIf="type === 'product'" [(ngModel)]="model['description']" name='pdescription' class="form-control mb-2" placeholder="Descripción"></textarea>
+<input *ngIf="type === 'product'" [(ngModel)]="model['price']" name='pprice' type="number" class="form-control mb-2" placeholder="Precio" />
+<select *ngIf="type === 'product'" [(ngModel)]="model['category']" name="pcategory" class="form-select mb-2">
+  <option *ngFor="let cat of categories" [value]="cat._id">{{ cat.name }}</option>
+</select>
+
 </form>
 
 

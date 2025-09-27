@@ -43,7 +43,7 @@ import { ModalComponent } from './shared/components/Modal/modal.component';
     LoginComponent,
      MainLayoutComponent,
     AuthLayoutComponent,
-    ProductsListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -69,7 +69,7 @@ import { ModalComponent } from './shared/components/Modal/modal.component';
     SidebarModule,
     FooterComponent,
     FormsModule,
-
+    ModalComponent
 ],
   providers: [{
       provide: HTTP_INTERCEPTORS,

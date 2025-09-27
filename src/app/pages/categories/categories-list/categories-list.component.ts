@@ -73,7 +73,21 @@ openModal(mode: typeof this.modalMode, category?: Category) {
     });
   }
 
-  handleDelete(id: string) {
-    this.categoryService.delete(id).subscribe(() => this.load());
-  }
+handleDelete(id: string) {
+  this.categoryService.delete(id).subscribe({
+    next: () => {
+      this.load();
+    },
+    error: (err) => {
+      if (err.status === 409 && err.error?.message === 'Category is in use by products') {
+        const count = err.error?.productsUsingCategory || 0;
+        alert(`❌ Esta categoría no se puede eliminar porque está siendo usada por ${count} producto${count !== 1 ? 's' : ''}.`);
+      } else {
+        alert('⚠️ Error al eliminar la categoría.');
+        console.error(err);
+      }
+    }
+  });
+}
+
 }

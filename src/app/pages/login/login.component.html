@@ -27,4 +27,14 @@
       </div>
     </div>
   </div>
+
 </div>
+
+<app-modal
+  [visible]="disclaimerVisible"
+  [title]="'Ten paciencia ⚠️'"
+  [mode]="'view'"
+  [model]="model"
+  (onClose)="disclaimerVisible = false"
+>
+</app-modal>
